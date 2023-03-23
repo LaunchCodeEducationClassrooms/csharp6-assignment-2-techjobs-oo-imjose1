@@ -30,7 +30,7 @@ namespace TechJobs.Tests
 
             //verify
             Assert.AreEqual("Product tester", job3.Name.ToString(), "Is Name set at time of declaration?");
-            Assert.AreNotEqual("ACME", job3.EmployerName.ToString(), "Is Employer Name set at time of declaration?");
+            Assert.AreNotEqual("ACME", job3.EmployerName, "Is Employer Name set at time of declaration?");
             Assert.AreEqual("Desert", job3.EmployerLocation.ToString(), "Is Location set at time of declaration?");
             Assert.AreEqual("Quality control", job3.JobType.ToString(), "Is Job type set at time of declaration?");
             Assert.AreEqual("Persistence", job3.JobCoreCompetency.ToString(), "Is Job Core set at time of declaration?");
@@ -47,6 +47,16 @@ namespace TechJobs.Tests
 
             // verify
             Assert.AreNotEqual(job3, job4, "they are the same object");
+        }
+
+        [TestMethod]//4
+
+        public void TestToStringStartsAndEndsWithNewLine()
+        {
+            //setup
+            Job job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+            Assert.AreEqual()
         }
     }
 }
