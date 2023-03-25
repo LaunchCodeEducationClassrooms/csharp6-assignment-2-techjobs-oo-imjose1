@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Reflection;
+using System.Runtime.ConstrainedExecution;
+
 namespace TechJobsOOAutoGraded6
 {
     public class Job
@@ -40,13 +43,30 @@ namespace TechJobsOOAutoGraded6
         // TODO: Task 5: Generate custom ToString() method.
         public override string ToString()
         {
-            return Name;
-        }
+          if(EmployerName.Value == "")
+            {
+                EmployerName.Value = "Data not available";
 
+            }else if (EmployerLocation.Value == "")
+            {
+                EmployerLocation.Value = "Data not available";
+
+            }else if (JobType.Value == "")
+            {
+                JobType.Value = "Data not available";
+            }else if(JobCoreCompetency.Value == "")
+            {
+                JobCoreCompetency.Value = "Data not available";
+            }
+               
+           
+           
+
+                return $"\n ID: {Id} \n Name: {Name} \n Employer: {EmployerName} \n Location: {EmployerLocation} \n Position Type: {JobType} \n Core Competency: {JobCoreCompetency} \n";
+        }
         //Until you create this method, you will not be able to print a job to the console.
 
 
 
     }
 }
-
