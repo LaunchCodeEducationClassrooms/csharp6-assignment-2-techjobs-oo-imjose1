@@ -1,4 +1,4 @@
-﻿
+﻿using TechJobs.Tests;
 namespace TechJobsOO.Tests
 {
 	[TestClass]
@@ -8,7 +8,7 @@ namespace TechJobsOO.Tests
         //Uses jobs from the Job class.
         //Tests are numbered.
 
-        /*TODO: Task 5: Remove this line to uncomment the tests
+
 
         //Unit Test 1:  TestToStringStartsAndEndsWithNewLine  -----------------------
 
@@ -56,7 +56,7 @@ namespace TechJobsOO.Tests
             Assert.AreEqual(text, output, "New Line issue");
         }
 
-        //Unit Test 2: TestToStringContainsCorrectLabelsAndData -----------------------
+        ////Unit Test 2: TestToStringContainsCorrectLabelsAndData -----------------------
 
 
         [TestMethod]  //3
@@ -102,7 +102,7 @@ namespace TechJobsOO.Tests
         }
 
 
-        //Unit Test 3: TestToStringHandlesEmptyField --------------------
+        ////Unit Test 3: TestToStringHandlesEmptyField --------------------
 
         [TestMethod] //5
         public void TestToStringHandlesEmptyField_Exists()
@@ -145,7 +145,7 @@ namespace TechJobsOO.Tests
             //verify
             Assert.AreEqual(text, output, "Empty string handling error");
         }
-        TODO: Task 5: Remove this line to uncomment the tests*/
+
 
     }
 
