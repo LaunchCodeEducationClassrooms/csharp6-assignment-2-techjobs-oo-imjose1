@@ -94,3 +94,9 @@ namespace TechJobs.Tests
     }
 }
 
+//        ID:  _______
+//        Name: _______
+//        Employer: _______
+//        Location: _______
+//        Position Type: _______
+//        Core Competency: _______
