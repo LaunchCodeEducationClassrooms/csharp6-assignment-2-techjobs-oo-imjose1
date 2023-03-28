@@ -59,13 +59,13 @@ namespace TechJobs.Tests
         {
             //setup
             Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-           
+
 
             //verify
-            Assert.IsTrue(job1.ToString().StartsWith('\n'));
-            Assert.IsTrue(job1.ToString().EndsWith('\n'));
+            Assert.IsTrue(job1.ToString().StartsWith(Environment.NewLine));
+            Assert.IsTrue(job1.ToString().EndsWith(Environment.NewLine));
 
-            //Assert.AreEqual($"\n ID: {job1.Id} \n Name: {job1.Name} \n Employer: {job1.EmployerName} \n Location: {job1.EmployerLocation} \n Position Type: {job1.JobType} \n Core Competency: {job1.JobCoreCompetency} \n", job1.ToString());
+            Assert.AreEqual($"\n ID: {job1.Id} \n Name: {job1.Name} \n Employer: {job1.EmployerName} \n Location: {job1.EmployerLocation} \n Position Type: {job1.JobType} \n Core Competency: {job1.JobCoreCompetency} \n", job1.ToString());
 
         }
 
@@ -86,7 +86,7 @@ namespace TechJobs.Tests
         {
             //setup
             Job job3 = new Job("Ice cream tester", new Employer(""), new Location("Home"), new PositionType("UX"), new CoreCompetency("Tasting ability"));
-            string output = $"\nID: {job3.Id}\nName: Ice cream tester\nEmployer: Data not available\nLocation: Home\nPosition Type: UX\nCore Competency: Tasting ability\n";
+            string output = Environment.NewLine+ $"ID: {job3.Id}\nName: Ice cream tester\nEmployer: Data not available\nLocation: Home\nPosition Type: UX\nCore Competency: Tasting ability" +Environment.NewLine;
 
             // verify
             Assert.AreEqual(output, job3.ToString());
