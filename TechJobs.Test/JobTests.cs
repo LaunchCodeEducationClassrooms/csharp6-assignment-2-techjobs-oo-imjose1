@@ -65,7 +65,6 @@ namespace TechJobs.Tests
             Assert.IsTrue(job1.ToString().StartsWith(Environment.NewLine));
             Assert.IsTrue(job1.ToString().EndsWith(Environment.NewLine));
 
-            Assert.AreEqual($"\n ID: {job1.Id} \n Name: {job1.Name} \n Employer: {job1.EmployerName} \n Location: {job1.EmployerLocation} \n Position Type: {job1.JobType} \n Core Competency: {job1.JobCoreCompetency} \n", job1.ToString());
 
         }
 
@@ -76,7 +75,8 @@ namespace TechJobs.Tests
             Job job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
             //verify
-            Assert.AreEqual($"\n ID: {job3.Id} \n Name: {job3.Name} \n Employer: {job3.EmployerName} \n Location: {job3.EmployerLocation} \n Position Type: {job3.JobType} \n Core Competency: {job3.JobCoreCompetency} \n", job3.ToString(), "not correct id label and data");
+            Assert.AreEqual(Environment.NewLine+$"ID: "+job3.Id+ Environment.NewLine+"Name: "+job3.Name+ Environment.NewLine+"Employer: "+job3.EmployerName+ Environment.NewLine+"Location: "+job3.EmployerLocation+ Environment.NewLine+"Position Type: "+job3.JobType+ Environment.NewLine+"Core Competency: "+
+                job3.JobCoreCompetency+ Environment.NewLine, job3.ToString(), "not correct id label and data");
 
 
         }
@@ -86,7 +86,8 @@ namespace TechJobs.Tests
         {
             //setup
             Job job3 = new Job("Ice cream tester", new Employer(""), new Location("Home"), new PositionType("UX"), new CoreCompetency("Tasting ability"));
-            string output = Environment.NewLine+ $"ID: {job3.Id}\nName: Ice cream tester\nEmployer: Data not available\nLocation: Home\nPosition Type: UX\nCore Competency: Tasting ability" +Environment.NewLine;
+            //string output = Environment.NewLine+$"ID: {job3.Id}\nName: Ice cream tester\nEmployer: Data not available\nLocation: Home\nPosition Type: UX\nCore Competency: Tasting ability" +Environment.NewLine;
+            string output = Environment.NewLine+"ID: "+job3.Id+Environment.NewLine+"Name: Ice cream tester"+Environment.NewLine+"Employer: Data not available"+Environment.NewLine+"Location: Home"+Environment.NewLine+"Position Type: UX"+Environment.NewLine+"Core Competency: Tasting ability"+Environment.NewLine;
 
             // verify
             Assert.AreEqual(output, job3.ToString());

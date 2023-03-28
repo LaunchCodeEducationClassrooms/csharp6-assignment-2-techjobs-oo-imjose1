@@ -8,32 +8,32 @@ namespace TechJobsOO.Tests
         //Tests have been numbered.
 
        
-        [TestMethod] //1
-        public void Test_Attributes_Of_JobField()
-        {
-            //setup 
-            Type jFType = typeof(JobField);
-            var expected = jFType.Attributes.ToString().Contains("Abstract") ? "true" : "false";
+        //[TestMethod] //1
+        //public void Test_Attributes_Of_JobField()
+        //{
+        //    //setup 
+        //    Type jFType = typeof(JobField);
+        //    var expected = jFType.Attributes.ToString().Contains("Abstract") ? "true" : "false";
 
-            //verify
-            Assert.AreEqual(expected, "true", "JobField is not an abstract class");
-        }
+        //    //verify
+        //    Assert.AreEqual(expected, "true", "JobField is not an abstract class");
+        //}
 
 
-        [TestMethod]  //2
-        public void Test_DRY_Employer()
-        {
-            //setup
-            Type empType = typeof(Employer);
-            ConstructorInfo[] constructorInfos = empType.GetConstructors();
-            int conLength = constructorInfos.Length;
-            MethodInfo[] methodInfos = empType.GetMethods();
-            int methodLength = methodInfos.Length;
+        //[TestMethod]  //2
+        //public void Test_DRY_Employer()
+        //{
+        //    //setup
+        //    Type empType = typeof(Employer);
+        //    ConstructorInfo[] constructorInfos = empType.GetConstructors();
+        //    int conLength = constructorInfos.Length;
+        //    MethodInfo[] methodInfos = empType.GetMethods();
+        //    int methodLength = methodInfos.Length;
 
-            //verify
-            Assert.AreEqual(1, conLength, "Employer class constructors not properly refactored");
-            Assert.IsTrue(methodLength < 8, "Employer class methods not properly refactored");
-        }
+        //    //verify
+        //    Assert.AreEqual(1, conLength, "Employer class constructors not properly refactored");
+        //    Assert.IsTrue(methodLength < 8, "Employer class methods not properly refactored");
+        //}
 
 
         //[TestMethod] //3

@@ -59,10 +59,9 @@ namespace TechJobsOOAutoGraded6
                 JobCoreCompetency.Value = "Data not available";
             }
                
-           
-           
-
-                return $"\n ID: {Id} \n Name: {Name} \n Employer: {EmployerName} \n Location: {EmployerLocation} \n Position Type: {JobType} \n Core Competency: {JobCoreCompetency} \n";
+         //return Environment.NewLine+ $"ID: {Id}\nName: {Name}\nEmployer: {EmployerName}\nLocation: {EmployerLocation}\nPosition Type: {JobType}\nCore Competency: {JobCoreCompetency}"+ Environment.NewLine;
+         return Environment.NewLine+"ID: "+Id+Environment.NewLine+"Name: "+Name+Environment.NewLine+"Employer: "+EmployerName+Environment.NewLine+"Location: "+EmployerLocation+Environment.NewLine+"Position Type: "+JobType+Environment.NewLine+"Core Competency: "+JobCoreCompetency+ Environment.NewLine;
+              
         }
         //Until you create this method, you will not be able to print a job to the console.
 
